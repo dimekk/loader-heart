@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transform: rotate(-45deg);
+}
+
+.heart {
+    background-color: red;
+    height: 99px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 100px;
+    animation: beat 1.5s infinite ease-in;
+    &:before,
+    &:after {
+        content: "";
+        background-color: red;
+        border-radius: 50%;
+        height: 100px;
+        position: absolute;
+        width: 100px;
+    }
+    &:before {
+        top: -45px;
+        left: 0px;
+    }
+    
+    &:after {
+        left: 45px;
+        top: -1px;
+    }   
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.4);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+
+    75% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
